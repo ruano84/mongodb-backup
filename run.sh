@@ -28,7 +28,7 @@ cat <<EOF >> /backup.sh
 . /functions.sh
 
 MAX_BACKUPS=${MAX_BACKUPS}
-BACKUP_NAME=mongodb-\$(date +\%Y.\%m.\%d.\%H\%M\%S)
+BACKUP_NAME=${BACKUP_NAME_PREFIX}mongodb-\$(date +\%Y.\%m.\%d.\%H\%M\%S)
 echo "Backup name set as \${BACKUP_NAME}"
 
 echo "=> Backup started"
