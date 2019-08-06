@@ -5,6 +5,9 @@ function azure_upload() {
   local container="$4"
   local azureSAS="$5"
   echo "uploading ${source} as ${destination}"
+
+  echo "azure url: https://${accountname}.blob.core.windows.net/${container}/${destination}"
+  
   curl -X PUT \
   "https://${accountname}.blob.core.windows.net/${container}/${destination}?${azureSAS}" \
   -H 'Accept: Application/json' \
